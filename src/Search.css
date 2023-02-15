@@ -1,0 +1,8 @@
+.box{
+    display: flex;
+}
+
+.box button{
+    /* width: 7vw; */
+    margin-left: 10px;
+}
