@@ -7,9 +7,6 @@ function Movies() {
   const[page,setpage]=useState(1);
   const[content,setContent]=useState([]);
   const[numofpages,setNumofpages]=useState();
-  const[genres,setgenres]=useState([]);
-  const[selectedgenre,setselectedgenre]=useState([]);
-
   const fetchData=async()=>{
 
     const {data}= await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`);
@@ -18,8 +15,9 @@ function Movies() {
   }
   
   useEffect(()=>{
-    fetchData();
-  },[page])
+  fetchData();
+},// eslint-disable-next-line
+  [page])
 
   return (
     <div>

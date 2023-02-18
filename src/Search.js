@@ -29,6 +29,7 @@ setnumofpage(data.total_pages);
 useEffect(()=>{
   window.scroll(0,0);
   fetchdata();
+  // eslint-disable-next-line
 },[type,page]);
 
   return (
@@ -74,7 +75,7 @@ useEffect(()=>{
             ))
           }
           {searchtext && !content && 
-          (type ? <h2>NO SERIES FOUND</h2>:<h2>NO MOVIES FOUND</h2>)}
+          <h2>NOT FOUND</h2>}
         </div>
         {numofpage>1 && 
         (<Custompagination setpage={setpage}/>
